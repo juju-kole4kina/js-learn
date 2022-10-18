@@ -1,49 +1,62 @@
 'use strict';
 
 // 1
-// При помощи цикла for выведите чётные числа от 2 до 10.
+// Напишите if..else, соответствующий следующему switch:
+// switch (browser) {
+//   case 'Edge':
+//     alert( "You've got the Edge!" );
+//     break;
 
-// for (let i = 1; i < 11; i++) {
-//    if (i % 2 !== 0) continue;
-//    alert(i);
+//   case 'Chrome':
+//   case 'Firefox':
+//   case 'Safari':
+//   case 'Opera':
+//     alert( 'Okay we support these browsers too' );
+//     break;
+
+//   default:
+//     alert( 'We hope that this page looks ok!' );
 // }
+
+let browser;
+
+if (browser === 'Edge') {
+   alert("You've got the Edge!");
+} else if (browser === 'Chrome' || browser === 'Firefox' || browser === 'Safari' || browser === 'Opera') {
+   alert('Okay we support these browsers too');
+} else {
+   alert('We hope that this page looks ok!');
+}
 
 // 2
-// Перепишите код, заменив цикл for на while, без изменения поведения цикла.
-// for (let i = 0; i < 3; i++) {
-//    alert(`number ${i}!`);
+// Перепишите код с использованием одной конструкции switch:
+// const number = +prompt('Введите число между 0 и 3', '');
+
+// if (number === 0) {
+//   alert('Вы ввели число 0');
 // }
 
-// let i = 0;
-// while (i < 3) {
-//    alert(`number ${i}!`);
-//    i++;
+// if (number === 1) {
+//   alert('Вы ввели число 1');
 // }
 
-// 3
-// Напишите цикл, который предлагает prompt ввести число, большее 100. Если посетитель ввёл другое число – попросить ввести ещё раз, и так далее.
-// Цикл должен спрашивать число пока либо посетитель не введёт число, большее 100, либо не нажмёт кнопку Отмена(ESC).
-// Предполагается, что посетитель вводит только числа.Предусматривать обработку нечисловых строк в этой задаче необязательно.
-
-// let numb = +prompt('Введите число больше 100', '');
-// while (numb <= 100) {
-//    numb = +prompt('Введите число больше 100', '');
-//    if (numb > 100 || numb === null) break;
+// if (number === 2 || number === 3) {
+//   alert('Вы ввели число 2, а может и 3');
 // }
+let number = +prompt('Введите число между 0 и 3', '');
 
-// 4
-// Натуральное число, большее 1, называется простым, если оно ни на что не делится, кроме себя и 1.
-// Другими словами, n > 1 – простое, если при его делении на любое число кроме 1 и n есть остаток.
-// Например, 5 это простое число, оно не может быть разделено без остатка на 2, 3 и 4.
-// Напишите код, который выводит все простые числа из интервала от 2 до n.
-// Для n = 10 результат должен быть 2,3,5,7.
-// P.S. Код также должен легко модифицироваться для любых других интервалов.
-let n = 10;
+switch (number) {
+   case 0:
+      alert('Вы ввели число 0');
+      break;
 
-smp:
-for (let i = 2; i <= n; i++) {
-   for (let j = 2; j < i; j++) {
-      if (i % j == 0) continue smp;
-   }
-   console.log(i);
+   case 1:
+      alert('Вы ввели число 1');
+      break;
+
+   case 2:
+   case 3:
+      alert('Вы ввели число 2, а может и 3');
+      break;
 }
+
